@@ -7,6 +7,7 @@ enum Foo {
     Qux(u32)
 }
 
+// For enums while-let and if-let are better to use than match
 fn main() {
     // All have type `Option<i32>`
     let number = Some(7);
