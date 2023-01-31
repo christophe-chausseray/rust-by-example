@@ -7,6 +7,9 @@
 // As a reference lifetime 'static indicates that the data pointed to by the reference lives for the entire lifetime of the running program.
 // It can still be coerced to a shorter lifetime.
 
+// One special lifetime we need to discuss is 'static, which denotes that the affected reference can live for the entire duration of the program.
+// All string literals have the 'static lifetime
+
 // There are two ways to make a variable with 'static lifetime,
 // and both are stored in the read-only memory of the binary:
 
