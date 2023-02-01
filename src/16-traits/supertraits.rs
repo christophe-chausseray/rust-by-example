@@ -21,8 +21,8 @@ trait CompSciStudent: Programmer + Student {
 
 
 struct CompSciStudentType {
-  name: &'static str,
-  university: &'static str,
+  name: String,
+  university: String,
   fav_language: &'static str,
   git_username: &'static str
 }
@@ -41,13 +41,13 @@ impl Programmer for CompSciStudentType {
 
 impl Student for CompSciStudentType {
   fn university(&self) -> String {
-    self.university.to_string()
+    self.university.clone()
   }
 }
 
 impl Person for CompSciStudentType {
   fn name(&self) -> String {
-    self.name.to_string()
+    self.name.clone()
   }
 }
 
@@ -63,8 +63,8 @@ fn comp_sci_student_greeting(student: &dyn CompSciStudent) -> String {
 
 fn main() {
   let student = CompSciStudentType {
-    name: "Christophe",
-    university: "LR University",
+    name: "Christophe".to_owned(),
+    university: "LR University".to_string(),
     fav_language: "Rust",
     git_username: "Chris"
   };
