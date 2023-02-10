@@ -6,3 +6,9 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+
+# standard crate data is left out
+# Sometimes there is a need to have dependencies for tests (or examples, or benchmarks) only.
+# These dependencies are not propagated to other packages which depend on this package.
+[dev-dependencies]
+pretty_assertions = "1"

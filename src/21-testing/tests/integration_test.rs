@@ -7,6 +7,8 @@
 // importing common module.
 mod common;
 
+use pretty_assertions::assert_eq; // crate for test-only use. Cannot be used in non-test code.
+
 #[test]
 fn test_add() {
     // using common code.

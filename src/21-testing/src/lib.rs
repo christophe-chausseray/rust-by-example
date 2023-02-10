@@ -70,6 +70,9 @@ pub fn div(a: i32, b: i32) -> i32 {
 // Using ? makes compilation fail since main returns unit.
 // The ability to hide some source lines from documentation comes to the rescue:
 // one may write fn try_main() -> Result<(), ErrorType>, hide it and unwrap it in hidden main.
+// Like it or not, example code is often copied verbatim by users.
+// Unwrapping an error should be a conscious decision that the user needs to make.
+// A common way of structuring fallible example code is the following.
 
 /// Using hidden `try_main` in doc tests.
 ///
@@ -99,6 +102,7 @@ pub fn try_div(a: i32, b: i32) -> Result<i32, String> {
 mod tests {
     // Note this useful idiom: importing names from outer (for mod tests) scope.
     use super::*;
+    use pretty_assertions::assert_eq; // crate for test-only use. Cannot be used in non-test code.
 
     #[test]
     fn test_add() {
