@@ -22,6 +22,7 @@ fn bad_add(a: i32, b: i32) -> i32 {
     a - b
 }
 
+#[allow(dead_code)]
 fn sqrt(number: f64) -> Result<f64, String> {
     if number >= 0.0 {
         Ok(number.powf(0.5))
