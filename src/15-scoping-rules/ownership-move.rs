@@ -7,6 +7,11 @@
 // After moving resources, the previous owner can no longer be used.
 // This avoids creating dangling pointers.
 
+// Ownership rules :
+// - Each value in Rust has an owner.
+// - There can only be one owner at a time.
+// - When the owner goes out of scope, the value will be dropped.
+
 // This function takes ownership of the heap allocated memory
 fn destroy_box(c: Box<i32>) {
     println!("Destroying a box that contains {}", c);

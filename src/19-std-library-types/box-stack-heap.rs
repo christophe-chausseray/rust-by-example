@@ -1,5 +1,7 @@
 // The stack is very fast, and is where memory is allocated in Rust by default.
 // But the allocation is local to a function call, and is limited in size.
+// The stack stores values in the order it gets them and removes the values in the opposite order.
+// This is referred to as last in, first out.
 
 // The heap, on the other hand, is slower, and is explicitly allocated by your program.
 // But it’s effectively unlimited in size, and is globally accessible.
@@ -7,6 +9,7 @@
 
 // All values in Rust are stack allocated by default.
 // Values can be boxed (allocated on the heap) by creating a Box<T>.
+// Allocating on the heap : The memory allocator finds an empty spot in the heap that is big enough, marks it as being in use, and returns a pointer, which is the address of that location
 // A box is a smart pointer to a heap allocated value of type T.
 // When a box goes out of scope, its destructor is called, the inner object is destroyed, and the memory on the heap is freed.
 

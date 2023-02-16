@@ -42,6 +42,8 @@ fn main() {
     // Borrow a mutable object as mutable
     new_edition(&mut mutabook);
 
+    println!("mutabook year after passing in function with a mutable reference : {}", mutabook.year);
+
     // Error! Cannot borrow an immutable object as mutable
     // new_edition(&mut immutabook);
     // FIXME ^ Comment out this line
